@@ -29,6 +29,15 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+
+doctype_js = {
+    "Sales Order": (
+        "override/sales_order/sales_order.js"
+    ),
+    "Quotation": (
+       "override/quotation/quotation.js"
+    ),
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -118,6 +127,14 @@ app_license = "mit"
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+override_doctype_class = {
+    "Sales Order": (
+        "amrut_crm.override.sales_order.sales_order.CustomSalesOrder"
+    ),
+    "Quotation": (
+        "amrut_crm.override.quotation.quotation.CustomQuotation"
+    ),
+}
 # Document Events
 # ---------------
 # Hook on document methods and events
