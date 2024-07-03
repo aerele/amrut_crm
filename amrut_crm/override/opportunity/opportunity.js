@@ -1,12 +1,10 @@
 
-frappe.ui.form.on('Sales Order', {
+frappe.ui.form.on('Opportunity', {
 	refresh(frm) {
 		// your code here
 		frm.set_query('custom_price_list', 'items', function() {
 			return {
 				filters: {
-					'name': ['not in', frm.doc.selling_price_list],
-					'selling': 1,
 					"enabled": 1,
                     "currency": frm.doc.currency
 				}
@@ -15,7 +13,7 @@ frappe.ui.form.on('Sales Order', {
 	}
 })
 
-frappe.ui.form.on('Sales Order Item', {
+frappe.ui.form.on('Opportunity Item', {
 	custom_price_list(frm, cdt, cdn) {
 		let row = locals[cdt][cdn];
 		// your code here
@@ -23,9 +21,6 @@ frappe.ui.form.on('Sales Order Item', {
 
 			if (r.message) {
 				frappe.model.set_value(cdt, cdn, 'rate', r.message);
-				frappe.model.set_value(cdt, cdn, 'price_list_rate', r.message);
-				frappe.model.set_value(cdt, cdn, 'discount_percentage', 0);
-				frappe.model.set_value(cdt, cdn, 'discount_amount', 0);
 			}
         
         })

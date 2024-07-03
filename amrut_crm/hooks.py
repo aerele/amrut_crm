@@ -37,6 +37,9 @@ doctype_js = {
     "Quotation": (
        "override/quotation/quotation.js"
     ),
+     "Opportunity": (
+       "override/opportunity/opportunity.js"
+    ),
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -133,6 +136,9 @@ override_doctype_class = {
     ),
     "Quotation": (
         "amrut_crm.override.quotation.quotation.CustomQuotation"
+    ),
+     "Opportunity": (
+        "amrut_crm.override.opportunity.opportunity.CustomOpportunity"
     ),
 }
 # Document Events

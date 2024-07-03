@@ -6,7 +6,9 @@ frappe.ui.form.on('Quotation', {
 			return {
 				filters: {
 					'name': ['not in', frm.doc.selling_price_list],
-					'selling': 1
+					'selling': 1,
+					"enabled": 1,
+					"currency": frm.doc.currency
 				}
 			}
 		});
